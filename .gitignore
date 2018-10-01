@@ -9,3 +9,4 @@ sw.*
 
 # build
 dist
+zipcode.json
