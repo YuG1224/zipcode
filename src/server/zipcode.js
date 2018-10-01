@@ -3,6 +3,7 @@ import find from 'lodash/find'
 import path from 'path'
 
 exports.handler = function(event, context, callback) {
+  console.log(event.path)
   const zipcode = path.relative('/zipcode', event.path)
 
   callback(null, {
