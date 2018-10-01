@@ -2,11 +2,11 @@ const path = require('path')
 
 module.exports = {
   entry: {
-    main: './src/index.js'
+    main: './src/client/index.js'
   },
   output: {
     filename: 'main.js',
-    path: path.resolve('dist/functions')
+    path: path.resolve('dist/client')
   },
   module: {
     rules: [
@@ -19,5 +19,15 @@ module.exports = {
         }
       }
     ]
+  },
+  devServer: {
+    proxy: {
+      '/.netlify': {
+        target: 'http://localhost:9000',
+        pathRewrite: {
+          '^/.netlify/functions': ''
+        }
+      }
+    }
   }
 }
