@@ -1,10 +1,9 @@
 import find from 'lodash/find'
-import glob from 'glob'
+import fs from 'fs-extra'
 import path from 'path'
 
 exports.handler = function(event, context, callback) {
-  console.log(glob.sync('./*'))
-  const data = {}
+  const data = fs.readJsonSync('./data.js'))
   const zipcode = path.relative('/zipcode', event.path)
 
   callback(null, {
