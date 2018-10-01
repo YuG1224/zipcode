@@ -1,12 +1,8 @@
+import data from './zipcode.json'
 import find from 'lodash/find'
-import fs from 'fs-extra'
 import path from 'path'
 
 exports.handler = function(event, context, callback) {
-  console.log(path.resolve('./'))
-  console.log(path.resolve('dist/functions', 'zipcode.json'))
-
-  const data = fs.readJsonSync(path.resolve('dist/functions', 'zipcode.json'))
   const zipcode = path.relative('/zipcode', event.path)
 
   callback(null, {
