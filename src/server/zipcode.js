@@ -1,9 +1,10 @@
-import data from './zipcode.json'
 import find from 'lodash/find'
+import glob from 'glob'
 import path from 'path'
 
 exports.handler = function(event, context, callback) {
-  console.log(event.path)
+  console.log(glob.sync('./*'))
+  const data = {}
   const zipcode = path.relative('/zipcode', event.path)
 
   callback(null, {
