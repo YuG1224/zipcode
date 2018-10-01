@@ -6,7 +6,7 @@ module.exports = {
   },
   output: {
     filename: 'main.js',
-    path: path.resolve('functions')
+    path: path.resolve('dist/functions')
   },
   module: {
     rules: [
