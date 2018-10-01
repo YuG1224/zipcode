@@ -5,11 +5,11 @@ const csv = require('csvtojson')
 const fs = require('fs-extra')
 
 unzipper.Open.url(request, 'https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip')
-  .then((d) => {
+  .then(d => {
     var file = d.files[0]
     return file.buffer()
   })
-  .then((buffer) => {
+  .then(buffer => {
     const utf8String = Encoding.convert(buffer, {
       from: 'SJIS',
       to: 'UNICODE',
@@ -19,12 +19,12 @@ unzipper.Open.url(request, 'https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/
     csv({
       noheader: true,
       headers: ['_', '_', 'zipcode', 'state_kana', 'city_kana', 'address_kana', 'state', 'city', 'address', '_', '_', '_', '_', '_', '_'],
-      colParser: {
-        '_': 'omit',
-      },
+      colParser: { _: 'omit' }
     })
-    .fromString(utf8String)
-    .then((jsonObj) => {
-      fs.outputJsonSync('./src/server/zipcode.json', jsonObj)
-    })
+      .fromString(utf8String)
+      .then(jsonObj => {
+        jsonObj.forEach(v => {
+          fs.outputJsonSync(`./public/${v.zipcode}.html`, v)
+        })
+      })
   })
