@@ -9,6 +9,3 @@ sw.*
 
 # build
 dist
-
-# Backpack build
-build
