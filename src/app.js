@@ -24,10 +24,8 @@ unzipper.Open.url(request, 'https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/
     })
       .fromString(utf8String)
       .then(jsonObj => {
-        console.log(jsonObj.length)
         jsonObj.forEach(v => {
           fs.outputJsonSync(`./public/zipcode/${v.zipcode}.html`, v)
-          consola.info(v.zipcode)
         })
       })
   })
