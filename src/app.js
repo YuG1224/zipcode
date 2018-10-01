@@ -1,6 +1,7 @@
 const request = require('request')
 const unzipper = require('unzipper')
 const Encoding = require('encoding-japanese')
+const consola = require('consola')
 const csv = require('csvtojson')
 const fs = require('fs-extra')
 
@@ -25,6 +26,7 @@ unzipper.Open.url(request, 'https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/
       .then(jsonObj => {
         jsonObj.forEach(v => {
           fs.outputJsonSync(`./public/${v.zipcode}.html`, v)
+          consola.info(v.zipcode)
         })
       })
   })
