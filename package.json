@@ -8,10 +8,10 @@
   "scripts": {
     "build": "yarn build:client && yarn build:server",
     "build:client": "webpack --mode production --config webpack.client.js",
-    "build:server": "netlify-lambda build src/server",
+    "build:server": "node src/build/app.js && netlify-lambda build src/server",
     "start": "concurrently 'yarn start:client' 'yarn start:server'",
     "start:client": "webpack-dev-server --mode development --hot --config webpack.client.js",
-    "start:server": "netlify-lambda serve src/server -c webpack.server.js",
+    "start:server": "node src/build/app.js && netlify-lambda serve src/server -c webpack.server.js",
     "eslint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
     "lint": "run-s prettier eslint",
     "prettier": "prettier --write \"./**/*.{js,json,md}\""
@@ -26,6 +26,7 @@
     "eslint-loader": "^2.1.1",
     "eslint-plugin-html": "^4.0.6",
     "eslint-plugin-prettier": "^3.0.0",
+    "fs-extra": "^7.0.0",
     "lint-staged": "^7.3.0",
     "lodash": "^4.17.11",
     "netlify-lambda": "^0.4.0",
