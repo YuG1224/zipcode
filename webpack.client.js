@@ -8,6 +8,7 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve('dist/client')
   },
+  mode: process.env.NODE_ENV,
   module: {
     rules: [
       {

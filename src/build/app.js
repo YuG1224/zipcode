@@ -25,6 +25,7 @@ unzipper.Open.url(request, 'https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/
     })
     .fromString(utf8String)
     .then((jsonObj) => {
-      fs.outputJsonSync('./dist/zipcode.json', jsonObj)
+      const filePath = process.env.NODE_ENV === 'production' ? './dist/functions/zipcode.json' : './src/server/zipcode.json'
+      fs.outputJsonSync(filePath, jsonObj)
     })
   })
