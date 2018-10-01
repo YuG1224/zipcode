@@ -8,5 +8,4 @@ npm-debug.log
 sw.*
 
 # build
-dist
-zipcode.json
+public/zipcode
