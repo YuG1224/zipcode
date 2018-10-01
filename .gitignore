@@ -9,6 +9,7 @@ sw.*
 
 # build
 dist
+functions
 
 # Backpack build
 build
