@@ -3,7 +3,7 @@ import fs from 'fs-extra'
 import path from 'path'
 
 exports.handler = function(event, context, callback) {
-  const data = fs.readJsonSync(path.resolve('./', 'dist/zipcode.json'))
+  const data = fs.readJsonSync('./zipcode.json')
   const zipcode = path.relative('/zipcode', event.path)
 
   callback(null, {
