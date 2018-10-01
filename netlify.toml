@@ -3,7 +3,7 @@
   functions = "dist/functions"
 
 [[redirects]]
-  from = "/:code"
+  from = "/zipcode/:code"
   to = "/.netlify/functions/zipcode/:code"
   status = 200
   force = false

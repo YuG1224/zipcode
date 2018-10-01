@@ -12,7 +12,7 @@
     "start": "concurrently 'yarn start:client' 'yarn start:server'",
     "start:client": "webpack-dev-server --mode development --hot --config webpack.client.js",
     "start:server": "node src/build/app.js && netlify-lambda serve src/server -c webpack.server.js",
-    "eslint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
+    "eslint": "eslint --ext .js --ignore-path .gitignore . --fix",
     "lint": "run-s prettier eslint",
     "prettier": "prettier --write \"./**/*.{js,json,md}\""
   },
