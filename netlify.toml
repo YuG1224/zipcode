@@ -1,3 +1,9 @@
 [build]
   Command = "npm run build"
   functions = "dist/functions"
+
+[[redirects]]
+  from = "/zipcode"
+  to = "https://suspicious-shirley-99b131.netlify.com/.netlify/functions/zipcode"
+  status = 200
+  force = false
