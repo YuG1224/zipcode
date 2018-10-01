@@ -1,0 +1,14 @@
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+
+# Service Worker
+sw.*
+
+# build
+dist
+
+# Backpack build
+build

@@ -1,0 +1,27 @@
+{
+  "name": "zipcode",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/YuG1224/zipcode.git",
+  "author": "Yuji Yamaguchi <yuji.yamaguchi24@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "prettier": "prettier --write \"./**/*.{js,json,md}\"",
+    "eslint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
+    "lint": "run-s prettier eslint"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.6.1",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-html": "^4.0.6",
+    "eslint-plugin-prettier": "^3.0.0",
+    "lint-staged": "^7.3.0",
+    "lodash": "^4.17.11",
+    "prettier": "^1.14.3",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
+}
